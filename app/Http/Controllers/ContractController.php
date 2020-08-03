@@ -42,7 +42,7 @@ class ContractController extends Controller
                  return view('editcontract',compact('editcontract'));
                 }
 
-                public function update(Request $request, $id)
+                public function update(Request $request)
                 {
                  
                 $update_contract = new Contract;
@@ -53,13 +53,13 @@ class ContractController extends Controller
                 $update_contract->ContractEndDate = $request->EndDate;
                 $update_contract->ContractCategory = $request->inputCategory;
 
-                echo $id;
-                echo $update_contract->id ;
+                //cho $id;
+                //echo $update_contract->id ;
                 //$update_contract->save();
                 //DB::update('update contracts set Partner = ? where id = ?', ['Vasilica'], [$id]);
 
-               //  Contract::where('id', $id)
-               //  ->update(['Partner' => 'mmmmm']);
+                 Contract::where('id', 34)
+                 ->update(['Partner' => 'mmmmm']);
              
                //  return redirect('contract');
 

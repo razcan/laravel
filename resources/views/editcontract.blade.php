@@ -6,7 +6,7 @@
 <form 
 method="post" 
 enctype="multipart/form-data"
-action="{{ route('updatecontract',28) }}"
+action="{{ route('updatecontract')}}"
 class="p-5"
 style="width: 800px;">
 @csrf

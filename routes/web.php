@@ -35,7 +35,7 @@ Route::get('/contract', 'ContractController@index')->name('contract');
 
 Route::post('/editcontract/{id}', 'ContractController@edit')->name('editcontract');
 
-Route::post('/updatecontract/{id}', 'ContractController@update')->name('updatecontract');
+Route::post('/updatecontract', 'ContractController@update')->name('updatecontract');
 
 Route::post('/deletecontract/{id}', 'ContractController@delete')->name('deletecontract');
 

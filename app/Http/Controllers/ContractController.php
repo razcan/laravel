@@ -61,9 +61,18 @@ class ContractController extends Controller
                 //$update_contract->save();
                 //DB::update('update contracts set Partner = ? where id = ?', [$update_contract->Partner],  $id);
 
-                DB::table('contracts')
-              ->where('id', $id)
-              ->update(['Partner' => $request->inputPartner]);
+                //Contract::whereIn('id', $id)->update($request->all());
+
+                 DB::table('contracts')
+                 ->where('id', $id)
+                 ->update(
+                  ['Partner' => $request->inputPartner,
+                  'ContractNumber' => $request->inputContractNumber,
+                  'ContractStartDate' => $request->StartDate,
+                  'ContractEndDate' => $request->EndDate,
+                  'ContractCategory' => $request->inputCategory]
+                 
+             );
 
                 return redirect('contract');
                //   Contract::where('id', 34)

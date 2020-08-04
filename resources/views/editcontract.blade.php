@@ -28,6 +28,14 @@ style="width: 800px;">
       >
     </div>
 
+ 
+    <div  class="form-group">
+      <label for="inputEmail4">Contract Number</label>
+      <input type="text" class="form-control" name="inputContractNumber" id="inputContractNumber"
+      value={{$contract->ContractNumber}}
+      >
+    </div>
+
     <div class="form-group">
     <label for="inputContractCategory">Categorie Contract</label>
     <select class="form-control" name="inputCategory"  id="inputCategory">

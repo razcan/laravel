@@ -46,16 +46,9 @@ class ContractController extends Controller
                 {
                  
                 //  dd($request);
-                 $update_contract = new Contract;
                  $id = $request->id;
-                 $update_contract->Partner = $request->inputPartner;
-                 $update_contract->ContractNumber = $request->inputContractNumber;
-                 $update_contract->ContractStartDate = $request->StartDate;
-                 $update_contract->ContractEndDate = $request->EndDate;
-                 $update_contract->ContractCategory = $request->inputCategory;
                //  $update_contract->save();
                 //return view('home',compact('contract')); 
-             
                 //cho $id;
                 //echo $update_contract->id ;
                 //$update_contract->save();

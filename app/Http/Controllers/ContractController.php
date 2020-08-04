@@ -45,21 +45,29 @@ class ContractController extends Controller
                 public function update(Request $request)
                 {
                  
-                $update_contract = new Contract;
-                $update_contract->id = $request->id;
-                $update_contract->Partner = $request->inputPartner;
-                $update_contract->ContractNumber = $request->inputContractNumber;
-                $update_contract->ContractStartDate = $request->StartDate;
-                $update_contract->ContractEndDate = $request->EndDate;
-                $update_contract->ContractCategory = $request->inputCategory;
-
+                //  dd($request);
+                 $update_contract = new Contract;
+                 $id = $request->id;
+                 $update_contract->Partner = $request->inputPartner;
+                 $update_contract->ContractNumber = $request->inputContractNumber;
+                 $update_contract->ContractStartDate = $request->StartDate;
+                 $update_contract->ContractEndDate = $request->EndDate;
+                 $update_contract->ContractCategory = $request->inputCategory;
+               //  $update_contract->save();
+                //return view('home',compact('contract')); 
+             
                 //cho $id;
                 //echo $update_contract->id ;
                 //$update_contract->save();
-                //DB::update('update contracts set Partner = ? where id = ?', ['Vasilica'], [$id]);
+                //DB::update('update contracts set Partner = ? where id = ?', [$update_contract->Partner],  $id);
 
-                 Contract::where('id', 34)
-                 ->update(['Partner' => 'mmmmm']);
+                DB::table('contracts')
+              ->where('id', $id)
+              ->update(['Partner' => $request->inputPartner]);
+
+                return redirect('contract');
+               //   Contract::where('id', 34)
+               //   ->update(['Partner' => 'mmmmm']);
              
                //  return redirect('contract');
 

@@ -15,9 +15,9 @@ style="width: 800px;">
 @foreach ($editcontract as $contract)
 
 <div  class="form-group">
-      <label for="inputPartner">Id</label>
+      <label for="id">Id</label>
       <input type="text" class="form-control" name="id"  id="id"
-      value={{$contract->id}} disabled
+      value={{$contract->id}} 
       >
     </div>
     

@@ -23,6 +23,10 @@ class CreateContractsTable extends Migration
             $table->string('ContractCategory');
         });
     }
+
+    // public function contract_details() {
+    //     return $this-> hasMany(contract_details::class);
+    //     }
     
 
     /**
@@ -32,6 +36,6 @@ class CreateContractsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('contracts');
     }
 }

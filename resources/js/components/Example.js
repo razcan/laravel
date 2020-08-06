@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'primereact/resources/themes/nova-light/theme.css';
+import 'primereact/resources/primereact.css';
+import 'primeicons/primeicons.css';
+
 
 function Example() {
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Example Component</div>
-
-                        <div className="card-body">I'm an example component!</div>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <h3>Password</h3>
         </div>
     );
 }

@@ -1,59 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { useState } from 'react';
 
-// function User() {
-//     return (
-//         <div className="container mt-5">
-//             <div className="row justify-content-center">
-//                 <div className="col-md-8">
-//                     <div className="card text-center">
-//                         <div className="card-header"><h2>React Component in Laravel</h2></div>
-
-//                         <div className="card-body">I'm tiny React component in Laravel app!</div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default User;
-
-// DOM element
-// if (document.getElementById('user')) {
-//     ReactDOM.render(<User />, document.getElementById('user'));
-// }
 
 class Input extends React.Component {
-    constructor(props) {
-      super(props);
-    //   this.state = {value: 'Hello React'};
-      this.state = {value: ''};
-      this.state2 = {value: 'kk'};
-      this.handleChange = this.handleChange.bind(this);
-    }
-    
-    handleChange(e) {
-      this.setState({value: e.target.value});
-    }
+
+  constructor () {
+    super();
+    this.state = {
+      email: '',
+      password: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange (evt, field) {
+    // check it out: we get the evt.target.name (which will be either "email" or "password")
+    // and use it to target the key on our `state` object with the same name, using bracket syntax
+    this.setState({ [field]: evt.target.value });
+  }
+
+render () {
+    return (
+  <form>
+
+    <label>Email</label>
+    <input type="text" name="email" onChange={(event)=>this.handleChange(event, "email")} />
+
+    <label>Password</label>
+    <input type="text" name="password" onChange={(event)=>this.handleChange(event, "password")} />
+
+    <p>Aici : {this.state.email}</p>
+    <p>Aici : {this.state.password}</p>
+    <p>Suma : {this.state.password * this.state.email}</p>
   
-    
-    render() {
-      return(
-        <div className="container">
-          <h1 className="intro">Binding data with React</h1>
-          <div className="box">
-            
-            <input className="input is-medium" type='text' id='input' value={this.state.value} onChange={this.handleChange} />
-            <input className="input is-medium" type='text' id='input2' value={this.state2.value} onChange={this.handleChange} />
-            <p className="input-value">The value of the input is: <span className="highlight">{this.state.value}</span></p>
-            <p className="input-value">The time is: <span className="highlight"><h2>It is {new Date().toLocaleTimeString()}.</h2></span></p>
-          </div>
-        </div>
-      );
-    }
+  </form>
+);
+  }
   }
   
   ReactDOM.render(<Input />, document.getElementById('app'));
-  ReactDOM.render(<Input />, document.getElementById('app2'));
+
   

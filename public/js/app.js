@@ -65797,6 +65797,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -65818,43 +65820,23 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
- // function User() {
-//     return (
-//         <div className="container mt-5">
-//             <div className="row justify-content-center">
-//                 <div className="col-md-8">
-//                     <div className="card text-center">
-//                         <div className="card-header"><h2>React Component in Laravel</h2></div>
-//                         <div className="card-body">I'm tiny React component in Laravel app!</div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-// export default User;
-// DOM element
-// if (document.getElementById('user')) {
-//     ReactDOM.render(<User />, document.getElementById('user'));
-// }
+
+
 
 var Input = /*#__PURE__*/function (_React$Component) {
   _inherits(Input, _React$Component);
 
   var _super = _createSuper(Input);
 
-  function Input(props) {
+  function Input() {
     var _this;
 
     _classCallCheck(this, Input);
 
-    _this = _super.call(this, props); //   this.state = {value: 'Hello React'};
-
+    _this = _super.call(this);
     _this.state = {
-      value: ''
-    };
-    _this.state2 = {
-      value: 'kk'
+      email: '',
+      password: ''
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
@@ -65862,41 +65844,29 @@ var Input = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Input, [{
     key: "handleChange",
-    value: function handleChange(e) {
-      this.setState({
-        value: e.target.value
-      });
+    value: function handleChange(evt, field) {
+      // check it out: we get the evt.target.name (which will be either "email" or "password")
+      // and use it to target the key on our `state` object with the same name, using bracket syntax
+      this.setState(_defineProperty({}, field, evt.target.value));
     }
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "intro"
-      }, "Binding data with React"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "box"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "input is-medium",
+      var _this2 = this;
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        id: "input",
-        value: this.state.value,
-        onChange: this.handleChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "input is-medium",
+        name: "email",
+        onChange: function onChange(event) {
+          return _this2.handleChange(event, "email");
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        id: "input2",
-        value: this.state2.value,
-        onChange: this.handleChange
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "input-value"
-      }, "The value of the input is: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "highlight"
-      }, this.state.value)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "input-value"
-      }, "The time is: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "highlight"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "It is ", new Date().toLocaleTimeString(), ".")))));
+        name: "password",
+        onChange: function onChange(event) {
+          return _this2.handleChange(event, "password");
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Aici : ", this.state.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Aici : ", this.state.password), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Suma : ", this.state.password * this.state.email));
     }
   }]);
 
@@ -65904,7 +65874,6 @@ var Input = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, null), document.getElementById('app'));
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, null), document.getElementById('app2'));
 
 /***/ }),
 

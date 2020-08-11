@@ -18,5 +18,8 @@
     <!-- React JS -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <div id="app"></div>
+    <!-- <div id="app2"></div> -->
+
 </body>
 </html>

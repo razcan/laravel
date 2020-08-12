@@ -2,6 +2,8 @@
 
 @section('content')
 
+@livewireStyles
+
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script>
 $('#myModal').on('shown.bs.modal', function () {
@@ -12,7 +14,7 @@ $('#myModal').on('shown.bs.modal', function () {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-<script>
+<!-- <script>
 $(document).ready(function(){
   $("p").click(function(){
     alert("The paragraph was clicked.");
@@ -28,14 +30,10 @@ $(document).ready(function(){
   $("#para1").keyup(function(){
     $("#para1").css("background-color", "pink");
   });
-});
-
-// $("qtty").keydown(function() {
-//   value = $("#qtty").val();
-//   alert(this.value);
-// });
+}); -->
 
 </script>
+
 
 
 <div>
@@ -86,7 +84,7 @@ $(document).ready(function(){
 </div>
 
 
-
+<livewire:styles />
 <form 
 method="post" 
 enctype="multipart/form-data"
@@ -166,6 +164,14 @@ style="width: 800px;">
     <label for="value">Valoare</label>
     <input type="text" class="form-control" id="value" name="value" aria-describedby="value" placeholder="Valoare">
   </div>
+
+</div>
+
+<div class="form-group">
+<label for="value">Valoare Calculata</label>
+    @livewire('valoare')
+</div>
+
 <!-- 
   <p>Click on this paragraph.</p>
 Enter your name: <input type="text" id="para1"> -->
@@ -183,10 +189,12 @@ Enter your name: <input type="text" id="para1"> -->
 <div>
 
 </div>
+<livewire:styles />
 
-
-    @endauth
+@endauth
 </form>
+
+</body>
 <br>
 
 @endsection

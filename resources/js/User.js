@@ -24,15 +24,15 @@ render () {
     return (
   <form>
 
-    <label>Email</label>
+    <label>Cifra 1</label>
     <input type="text" name="email" onChange={(event)=>this.handleChange(event, "email")} />
 
-    <label>Password</label>
+    <label>Cifra 2</label>
     <input type="text" name="password" onChange={(event)=>this.handleChange(event, "password")} />
 
-    <p>Aici : {this.state.email}</p>
-    <p>Aici : {this.state.password}</p>
-    <p>Suma : {this.state.password * this.state.email}</p>
+    <p>Cifra 1 : {this.state.email}</p>
+    <p>Cifra 2 : {this.state.password}</p>
+    <p>Produs : {this.state.password * this.state.email}</p>
   
   </form>
 );

@@ -87,28 +87,28 @@ class ContractController extends Controller
 
               public function store(Request $request)
               {
-               //dd($request);
+               dd($request);
                 //$contract = Contract::all();
-                $new_contract = new Contract;
-                $new_contract->Partner = $request->inputPartner;
-                $new_contract->ContractNumber = $request->inputContractNumber;
-                $new_contract->ContractStartDate = $request->StartDate;
-                $new_contract->ContractEndDate = $request->EndDate;
-                $new_contract->ContractCategory = $request->inputCategory;
-                $new_contract->save();
+               //  $new_contract = new Contract;
+               //  $new_contract->Partner = $request->inputPartner;
+               //  $new_contract->ContractNumber = $request->inputContractNumber;
+               //  $new_contract->ContractStartDate = $request->StartDate;
+               //  $new_contract->ContractEndDate = $request->EndDate;
+               //  $new_contract->ContractCategory = $request->inputCategory;
+               //  $new_contract->save();
 
                 
-               $newContractDetail = new ContractDetail;
-               $newContractDetail->item_name = $request->item_name;
-               $newContractDetail->qtty = $request->qtty;
-               $newContractDetail->price = $request->price;
+               // $newContractDetail = new ContractDetail;
+               // $newContractDetail->item_name = $request->item_name;
+               // $newContractDetail->qtty = $request->qtty;
+               // $newContractDetail->price = $request->price;
                
-               $newContractDetail->value = $request->value;
-               $newContractDetail->contract_id = $new_contract->id;
-               $newContractDetail->save();
+               // $newContractDetail->value = $request->value;
+               // $newContractDetail->contract_id = $new_contract->id;
+               // $newContractDetail->save();
 
                     //return view('home',compact('contract')); 
-                return redirect('contract');
+      // return redirect('contract');
                 //return view('contract');
 
                  //  $name = $request->input('inputContractNumber');

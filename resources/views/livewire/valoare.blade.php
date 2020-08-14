@@ -2,11 +2,15 @@
     <!-- <input wire:model="message" type="text"> -->
 
 
-    <input wire:model.debounce.5ms="message" type="text">
+    <input wire:model.debounce.5ms="cantitate" type="text">
+    <input wire:model.debounce.5ms="pret" type="text">
+    <input type="text" value="{{ $cantitate * $pret }}" >
 
-    <h1>{{ $message }}</h1>
+    <h1>{{ $cantitate * $pret }}</h1>
 
-    <!-- {{7 * 7}} -->
+    <button wire:click="addTodo({{ $cantitate }}, {{ $pret }} , {{ $valoare2 }})">Trimite Request</button>
+    <button wire:click="$set('valoare2', {{ $cantitate * $pret }})">Say Hi</button>
 
-    <!-- <h1>{{$message2}}</h1> -->
+<p> {{ $valoare2 }} </p>
+
 </div>

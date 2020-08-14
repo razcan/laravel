@@ -8,14 +8,22 @@ class Valoare extends Component
 {
  
 
-    public $message;
+    public $cantitate;
+    public $pret;
+    public $valoare2;
 
-    public $message2 = "Test";
+    public function addTodo($cantitate, $pret , $valoare2)
+{
+    return $valoare2;
+
+}
 
 
     public function render()
     {
         return view('livewire.valoare');
     }
-}
 
+
+
+}

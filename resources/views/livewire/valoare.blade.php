@@ -8,6 +8,7 @@
       class="form-control"
       type="text" name="inputContractNumber" id="inputContractNumber">
 </div>
+@error('inputContractNumber') <span class="error">{{ $message }}</span> @enderror
 
 <div  class="form-group col-xs-4 col-md-4">
       <label for="inputPartner" class="control-label">Partener</label>
@@ -75,6 +76,7 @@
     type="text" class="form-control" 
     id="value" name="value" aria-describedby="value" placeholder="value">
   </div>
+
 
 
 

@@ -30,6 +30,7 @@ class Valoare extends Component
     public $inputEndDate;
     public $item_name;
     public $idd;
+    public $test;
 
 //     public function addTodo($cantitate, $pret , $valoare2)
 // {
@@ -40,6 +41,10 @@ class Valoare extends Component
 public function save_contract($inputContractNumber,$inputPartner,$inputStartDate,$inputEndDate,
 $inputCategory,$item_name,$qtty,$price,$value)
 {
+
+    $this->validate([
+        'inputContractNumber' => 'required|min:4'
+    ]);
     
  $this->value = $this->qtty * $this->price;
 

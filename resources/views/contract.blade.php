@@ -35,6 +35,17 @@ $(document).ready(function(){
 </script>
 
 
+<label for="exampleFormControlSelect1">Categorie Contract</label>
+    <select class="form-control" name="inputCategory"  id="inputCategory">
+
+    @foreach ($tipContracte as $tipContractesingle)
+
+      <option>{{$tipContractesingle->description}}</option>
+
+    @endforeach  
+    </select>
+
+
 
 <div>
      <table class="table">

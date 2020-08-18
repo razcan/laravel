@@ -9,11 +9,19 @@ use App\Contract;
 use App\Contract_Detail;
 use App\ContractDetail;
 use Illuminate\Database\Migrations\Migration;
+use App\Library\Services\DemoOne;
 
 class ContractController extends Controller
 {
-            public  function index()
+
+   public $tipContracte;
+
+            public  function index(DemoOne $customServiceInstance)
              {
+  
+
+               $tipContracte = $customServiceInstance->doSomethingUseful();
+       //        echo $tipContracte;
                 // $data = "test";
                 // $data2 = "document controller";
 
@@ -24,8 +32,8 @@ class ContractController extends Controller
                 $contract = Contract::all();
                // echo $contracts;
                 //return view('contract');
-   
-                return view('contract',compact('contract'));
+               //return $tipContracte;
+                return view('contract',compact('contract'))->withtipContracte($tipContracte);
               }
 
               public function delete($id)

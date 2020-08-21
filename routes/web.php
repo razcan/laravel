@@ -22,9 +22,10 @@ Route::get('/', function () {
 // Create file upload form
 Route::get('/upload-file', 'FileUpload@createForm');
 
-// Store file
-Route::post('/upload-file', 'FileUpload@fileUpload')->name('fileUpload');
+// Store file Route::post('/upload-file', 'FileUpload@fileUpload')->name('fileUpload');
 
+
+Route::post('/upload-file', 'FileUpload@fileUpload')->middleware(size::class)->name('fileUpload');
 
 Route::livewire('/live', 'valoare');
 

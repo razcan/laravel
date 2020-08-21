@@ -19,6 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Create file upload form
+Route::get('/upload-file', 'FileUpload@createForm');
+
+// Store file
+Route::post('/upload-file', 'FileUpload@fileUpload')->name('fileUpload');
+
+
 Route::livewire('/live', 'valoare');
 
 
